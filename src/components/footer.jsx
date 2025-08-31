@@ -3,6 +3,7 @@
 import React from 'react';
 import { Mail, Phone } from 'lucide-react';
 import Button from '@/components/Button';
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -40,10 +41,8 @@ export default function Footer() {
           {/* Logo Section */}
           <div className="flex-shrink-0 w-full lg:w-auto">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 bg-white border-2 border-black rounded-full flex items-center justify-center">
-                <div className="w-4 h-4 bg-[#1836CF] rounded-full"></div>
-              </div>
-              <h3 className="text-xl font-bold text-white">Leagues of Code</h3>
+              <Image src={'/favicon.png'} alt={"loc"} width={30} height={30}/>
+              <h3 className="text-xl font-bold text-white">Leagues of Code |<br/> Powered By Harbour.Space</h3>
             </div>
 
             {/* Links */}

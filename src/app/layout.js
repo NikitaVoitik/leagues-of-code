@@ -19,6 +19,10 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata = {
   title: "Leagues Of Code",
   description: "Leagues Of Code",
+  icons: {
+    icon: '/favicon.png',
+  },
+
 };
 
 export default function RootLayout({ children }) {
