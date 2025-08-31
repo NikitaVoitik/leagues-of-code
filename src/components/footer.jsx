@@ -48,8 +48,8 @@ export default function Footer() {
 
             {/* Links */}
             <div className="flex flex-col gap-2 mb-6">
-              <a href="#" className="text-white text-lg hover:underline">Terms & Conditions</a>
-              <a href="#" className="text-white text-lg hover:underline">Privacy Policy</a>
+              <a href="/terms" className="text-white text-lg hover:underline">Terms & Conditions</a>
+              <a href="/privacy" className="text-white text-lg hover:underline">Privacy Policy</a>
               <p className="text-white text-lg">Carrer de Rosa Sensat, 9-11, 08005 Barcelona</p>
             </div>
 
