@@ -223,7 +223,7 @@ export default function TermsOfService() {
             </h2>
             <div className="space-y-4 text-[#444444] leading-relaxed">
               <p>
-                All texts, logos, graphics, images, source codes and contents are the property of "LoC" or of third parties from which they have acquired their exploitation rights, and are protected by intellectual and industrial property rights.
+                All texts, logos, graphics, images, source codes and contents are the property of &quot;LoC&quot; or of third parties from which they have acquired their exploitation rights, and are protected by intellectual and industrial property rights.
               </p>
               <p>
                 The user has the right only to the private use of the access and its contents for educational purposes. Total or partial reproduction of any of the contents is prohibited without express authorization.
