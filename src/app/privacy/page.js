@@ -129,10 +129,10 @@ export default function PrivacyPolicy() {
             </h2>
             <div className="space-y-4 text-[#444444] leading-relaxed">
               <p>
-                Leagues of Code follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this as part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.
+                Leagues of Code follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this as part of hosting services&apos; analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.
               </p>
               <p>
-                These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
+                These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users&apos; movement on the website, and gathering demographic information.
               </p>
             </div>
           </section>
@@ -145,7 +145,7 @@ export default function PrivacyPolicy() {
             </h2>
             <div className="space-y-4 text-[#444444] leading-relaxed">
               <p>
-                Like any other website, Leagues of Code uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.
+                Like any other website, Leagues of Code uses &apos;cookies&apos;. These cookies are used to store information including visitors preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users&apos; experience by customizing our web page content based on visitors&apos; browser type and/or other information.
               </p>
 
               <div className="bg-blue-50 border-2 border-blue-200 rounded-md p-4">
@@ -175,7 +175,7 @@ export default function PrivacyPolicy() {
                 You may consult this list to find the Privacy Policy for each of the advertising partners of Leagues of Code.
               </p>
               <p>
-                Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Leagues of Code, which are sent directly to users' browsers. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.
+                Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Leagues of Code, which are sent directly to users&apos; browsers. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.
               </p>
               <div className="bg-red-50 border-l-4 border-red-400 p-4">
                 <p>
@@ -191,7 +191,7 @@ export default function PrivacyPolicy() {
             </h2>
             <div className="space-y-4 text-[#444444] leading-relaxed">
               <p>
-                Leagues of Code's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.
+                Leagues of Code&apos;s Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.
               </p>
 
               <div className="bg-white border-2 border-black rounded-md shadow-[4px_4px_0px_0px_#000000] p-6">
@@ -205,7 +205,7 @@ export default function PrivacyPolicy() {
               </div>
 
               <p>
-                You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.
+                You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers&apos; respective websites.
               </p>
             </div>
           </section>
@@ -265,7 +265,7 @@ export default function PrivacyPolicy() {
 
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
-              Children's Information
+              Children&apos;s Information
             </h2>
             <div className="space-y-4 text-[#444444] leading-relaxed">
               <div className="bg-orange-50 border-2 border-orange-200 rounded-md p-4">
@@ -299,16 +299,6 @@ export default function PrivacyPolicy() {
               </div>
             </div>
           </section>
-
-          {/* Back to Home Button */}
-          <div className="mt-12 text-center">
-            <a
-              href="/"
-              className="inline-block bg-[#1836CF] hover:bg-[#1429A3] text-white font-bold py-3 px-6 rounded-md border-2 border-black shadow-[4px_4px_0px_0px_#000000] hover:shadow-[6px_6px_0px_0px_#000000] transition-all duration-200 ease-in-out"
-            >
-              Back to Home
-            </a>
-          </div>
         </div>
       </div>
     </div>

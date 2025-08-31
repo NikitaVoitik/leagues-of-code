@@ -44,11 +44,11 @@ export default function TermsOfService() {
                 </div>
                 <div>
                   <p><strong>Address:</strong> c. / Rosa Sensat, nº 9-11, 08005 Barcelona</p>
-                  <p><strong>Commercial name:</strong> ONLINE CODING AND MATHEMATICS VIRTUAL ACADEMY "LEAGUES OF CODE"</p>
+                  <p><strong>Commercial name:</strong> ONLINE CODING AND MATHEMATICS VIRTUAL ACADEMY &quot;LEAGUES OF CODE&quot;</p>
                 </div>
               </div>
               <p className="mt-4">
-                Leagues of Code ("LoC") is an online coding and mathematics academy for children and young adults aged 9-18, created to encourage, develop and hone the skills required in a new tech-dominated world. LoC's mission is to provide affordable, personalized high quality online education in coding and math to children around the world.
+                Leagues of Code (&quot;LoC&quot;) is an online coding and mathematics academy for children and young adults aged 9-18, created to encourage, develop and hone the skills required in a new tech-dominated world. LoC&apos;s mission is to provide affordable, personalized high quality online education in coding and math to children around the world.
               </p>
             </div>
           </section>
@@ -120,7 +120,7 @@ export default function TermsOfService() {
 
               <h4 className="font-bold text-black mt-6 mb-2">Passing a Module</h4>
               <p>
-                The student agrees to attend classes in a minimum percentage of 70%. Only 1 absence per module is allowed. To issue the course diploma, the student must pass all 10 modules of a league's exams with a minimum passing grade of 70% for each module.
+                The student agrees to attend classes in a minimum percentage of 70%. Only 1 absence per module is allowed. To issue the course diploma, the student must pass all 10 modules of a league&apos;s exams with a minimum passing grade of 70% for each module.
               </p>
             </div>
           </section>
@@ -229,7 +229,7 @@ export default function TermsOfService() {
                 The user has the right only to the private use of the access and its contents for educational purposes. Total or partial reproduction of any of the contents is prohibited without express authorization.
               </p>
               <p>
-                "LoC" reserves the unilateral rights and ownership to the class recordings that may include voice or video recordings of the students. LoC has the right to share these recordings with other users and parties for educational and commercial purposes.
+                &quot;LoC&quot; reserves the unilateral rights and ownership to the class recordings that may include voice or video recordings of the students. LoC has the right to share these recordings with other users and parties for educational and commercial purposes.
               </p>
             </div>
           </section>
@@ -273,14 +273,6 @@ export default function TermsOfService() {
           </section>
 
           {/* Back to Home Button */}
-          <div className="mt-12 text-center">
-            <a
-              href="/"
-              className="inline-block bg-[#1836CF] hover:bg-[#1429A3] text-white font-bold py-3 px-6 rounded-md border-2 border-black shadow-[4px_4px_0px_0px_#000000] hover:shadow-[6px_6px_0px_0px_#000000] transition-all duration-200 ease-in-out"
-            >
-              Back to Home
-            </a>
-          </div>
         </div>
       </div>
     </div>
