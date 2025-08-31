@@ -1,5 +1,6 @@
 import Main from "@/components/main";
 import Approach from "@/components/aproach";
+import Process from "@/components/process";
 import Separator from "@/components/separator";
 
 export default function Home() {
@@ -18,6 +19,8 @@ export default function Home() {
       <Main/>
       <Separator text={"OUR APPROACH"}/>
       <Approach/>
+      <Separator text={"OUR PROCESS"}/>
+      <Process/>
     </div>
   );
 }
