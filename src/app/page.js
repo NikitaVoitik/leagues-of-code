@@ -2,6 +2,7 @@ import Main from "@/components/main";
 import Approach from "@/components/aproach";
 import Process from "@/components/process";
 import Separator from "@/components/separator";
+import Reviews from "@/components/reviews";
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
       <Approach/>
       <Separator text={"OUR PROCESS"}/>
       <Process/>
+      <Separator text={"SUCCESS STORIES"}/>
+      <Reviews/>
     </div>
   );
 }
