@@ -1,4 +1,7 @@
+'use client'
+
 import Button from "@/components/Button";
+import React from "react";
 
 export default function Main() {
   return (
@@ -23,7 +26,7 @@ export default function Main() {
         </p>
       </div>
       <div>
-      <Button>BOOK A FREE CLASS</Button>
+        <Button onClick={() => window.open('https://harbour-space.typeform.com/to/qaVsoIqp?typeform-source=join.leaguesofcode.com', '_blank')}>BOOK A FREE CLASS</Button>
       </div>
     </div>
   );
