@@ -26,7 +26,7 @@ export default function Main() {
         </p>
       </div>
       <div>
-        <Button onClick={() => window.open('https://harbour-space.typeform.com/to/qaVsoIqp?typeform-source=join.leaguesofcode.com', '_blank')}>BOOK A FREE CLASS</Button>
+        <Button onClick={() => window.open('https://harbour-space.typeform.com/to/gxFFkidp?typeform-source=join.leaguesofcode.com', '_blank')}>BOOK A FREE CLASS</Button>
       </div>
     </div>
   );
