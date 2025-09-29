@@ -1,9 +1,10 @@
 import Main from "@/components/main";
 import Approach from "@/components/aproach";
 import Process from "@/components/process";
-import Separator from "@/components/separator";
+import Curriculum from "@/components/curriculum";
 import Reviews from "@/components/reviews";
 import Footer from "@/components/footer";
+import Separator from "@/components/separator";
 
 export default function Home() {
   return (
@@ -23,6 +24,8 @@ export default function Home() {
       <Approach/>
       <Separator text={"OUR PROCESS"}/>
       <Process/>
+      <Separator text={"OUR CURRICULUM"}/>
+      <Curriculum/>
       <Separator text={"SUCCESS STORIES"}/>
       <Reviews/>
       <Footer/>
