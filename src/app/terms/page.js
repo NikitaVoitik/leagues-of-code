@@ -1,35 +1,21 @@
 import React from 'react';
-import { Diamond } from 'lucide-react';
+import Separator from '@/components/ui/Separator';
+import LegalPageLayout from '@/components/layouts/LegalPageLayout';
+import { CONTENT } from '@/lib/content';
 
 export const metadata = {
   title: "Terms of Service - Leagues of Code",
   description: "Terms and conditions for using Leagues of Code services",
 };
 
-// Separator Component
-function SectionSeparator({ text }) {
-  return (
-    <div className="w-full my-10">
-      <Diamond className="h-4 w-4 mx-auto" fill={"#3959FF"} stroke={"#3959FF"}/>
-      <h4 className="text-xl font-semibold text-black text-center font-sans pt-2">{text}</h4>
-    </div>
-  );
-}
-
 export default function TermsOfService() {
+  const { footer, legal } = CONTENT;
+  
   return (
-    <div className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-8 md:py-16">
-        <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <div className="mb-8 md:mb-12 text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
-              Terms of Service
-            </h1>
-            <p className="text-lg text-[#626262]">
-              Last updated: 17 October 2022
-            </p>
-          </div>
+    <LegalPageLayout 
+      title={legal.terms.title} 
+      lastUpdated={legal.terms.lastUpdated}
+    >
 
           {/* About Section */}
           <section className="mb-12 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-[#1836CF] rounded-md shadow-[4px_4px_0px_0px_#1836CF]">
@@ -53,7 +39,7 @@ export default function TermsOfService() {
             </div>
           </section>
 
-          <SectionSeparator text="Service Requirements" />
+          <Separator text="Service Requirements" />
 
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
@@ -76,7 +62,7 @@ export default function TermsOfService() {
             </div>
           </section>
 
-          <SectionSeparator text="Course Information" />
+          <Separator text="Course Information" />
 
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
@@ -125,7 +111,7 @@ export default function TermsOfService() {
             </div>
           </section>
 
-          <SectionSeparator text="Additional Programs" />
+          <Separator text="Additional Programs" />
 
           <section className="mb-8">
             <div className="grid md:grid-cols-2 gap-6">
@@ -153,7 +139,7 @@ export default function TermsOfService() {
             </div>
           </section>
 
-          <SectionSeparator text="Pricing & Payment" />
+          <Separator text="Pricing & Payment" />
 
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
@@ -182,7 +168,7 @@ export default function TermsOfService() {
             </div>
           </section>
 
-          <SectionSeparator text="Cancellation & Refunds" />
+          <Separator text="Cancellation & Refunds" />
 
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
@@ -202,7 +188,7 @@ export default function TermsOfService() {
             </div>
           </section>
 
-          <SectionSeparator text="Conduct & Responsibilities" />
+          <Separator text="Conduct & Responsibilities" />
 
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
@@ -234,7 +220,7 @@ export default function TermsOfService() {
             </div>
           </section>
 
-          <SectionSeparator text="Legal Information" />
+          <Separator text="Legal Information" />
 
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
@@ -261,11 +247,11 @@ export default function TermsOfService() {
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-[#1836CF] rounded-md shadow-[4px_4px_0px_0px_#1836CF] p-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <p><strong>Email:</strong> hello@leaguesofcode.com</p>
-                    <p><strong>Phone:</strong> +34 671 498 303</p>
+                    <p><strong>Email:</strong> {footer.contact.email}</p>
+                    <p><strong>Phone:</strong> {footer.contact.phone}</p>
                   </div>
                   <div>
-                    <p><strong>Address:</strong> Carrer de Rosa Sensat, 9-11, 08005 Barcelona, Spain</p>
+                    <p><strong>Address:</strong> {footer.company.address}, Spain</p>
                   </div>
                 </div>
               </div>
@@ -273,8 +259,6 @@ export default function TermsOfService() {
           </section>
 
           {/* Back to Home Button */}
-        </div>
-      </div>
-    </div>
+    </LegalPageLayout>
   );
 }

@@ -1,35 +1,21 @@
 import React from 'react';
-import { Diamond } from 'lucide-react';
+import Separator from '@/components/ui/Separator';
+import LegalPageLayout from '@/components/layouts/LegalPageLayout';
+import { CONTENT } from '@/lib/content';
 
 export const metadata = {
   title: "Privacy Policy - Leagues of Code",
   description: "Privacy policy for Leagues of Code services",
 };
 
-// Separator Component
-function SectionSeparator({ text }) {
-  return (
-    <div className="w-full my-10">
-      <Diamond className="h-4 w-4 mx-auto" fill={"#3959FF"} stroke={"#3959FF"}/>
-      <h4 className="text-xl font-semibold text-black text-center font-sans pt-2">{text}</h4>
-    </div>
-  );
-}
-
 export default function PrivacyPolicy() {
+  const { footer, legal } = CONTENT;
+  
   return (
-    <div className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-8 md:py-16">
-        <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <div className="mb-8 md:mb-12 text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
-              Privacy Policy
-            </h1>
-            <p className="text-lg text-[#626262]">
-              Last updated: 16 august 2023
-            </p>
-          </div>
+    <LegalPageLayout 
+      title={legal.privacy.title} 
+      lastUpdated={legal.privacy.lastUpdated}
+    >
 
           {/* Introduction */}
           <section className="mb-12 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-[#1836CF] rounded-md shadow-[4px_4px_0px_0px_#1836CF]">
@@ -44,7 +30,7 @@ export default function PrivacyPolicy() {
             </div>
           </section>
 
-          <SectionSeparator text="Consent" />
+          <Separator text="Consent" />
 
           <section className="mb-8">
             <div className="space-y-4 text-[#444444] leading-relaxed">
@@ -54,7 +40,7 @@ export default function PrivacyPolicy() {
             </div>
           </section>
 
-          <SectionSeparator text="Information We Collect" />
+          <Separator text="Information We Collect" />
 
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
@@ -100,7 +86,7 @@ export default function PrivacyPolicy() {
             </div>
           </section>
 
-          <SectionSeparator text="How We Use Your Information" />
+          <Separator text="How We Use Your Information" />
 
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
@@ -121,7 +107,7 @@ export default function PrivacyPolicy() {
             </div>
           </section>
 
-          <SectionSeparator text="Log Files" />
+          <Separator text="Log Files" />
 
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
@@ -137,7 +123,7 @@ export default function PrivacyPolicy() {
             </div>
           </section>
 
-          <SectionSeparator text="Cookies and Web Beacons" />
+          <Separator text="Cookies and Web Beacons" />
 
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
@@ -164,7 +150,7 @@ export default function PrivacyPolicy() {
             </div>
           </section>
 
-          <SectionSeparator text="Third Party Privacy Policies" />
+          <Separator text="Third Party Privacy Policies" />
 
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
@@ -210,7 +196,7 @@ export default function PrivacyPolicy() {
             </div>
           </section>
 
-          <SectionSeparator text="GDPR Data Protection Rights" />
+          <Separator text="GDPR Data Protection Rights" />
 
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
@@ -261,7 +247,7 @@ export default function PrivacyPolicy() {
             </div>
           </section>
 
-          <SectionSeparator text="Children's Information" />
+          <Separator text="Children's Information" />
 
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
@@ -276,7 +262,7 @@ export default function PrivacyPolicy() {
             </div>
           </section>
 
-          <SectionSeparator text="Contact Information" />
+          <Separator text="Contact Information" />
 
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
@@ -289,8 +275,8 @@ export default function PrivacyPolicy() {
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-[#1836CF] rounded-md shadow-[4px_4px_0px_0px_#1836CF] p-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <p><strong>Email:</strong> hello@leaguesofcode.com</p>
-                    <p><strong>Address:</strong> Carrer de Rosa Sensat, 9-11, 08005</p>
+                    <p><strong>Email:</strong> {footer.contact.email}</p>
+                    <p><strong>Address:</strong> {footer.company.address}</p>
                   </div>
                   <div>
                     <p><strong>City:</strong> Barcelona, Spain</p>
@@ -299,8 +285,6 @@ export default function PrivacyPolicy() {
               </div>
             </div>
           </section>
-        </div>
-      </div>
-    </div>
+    </LegalPageLayout>
   );
 }
