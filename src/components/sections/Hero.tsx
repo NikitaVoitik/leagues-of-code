@@ -19,10 +19,16 @@ export default function Hero() {
           {hero.description}
         </p>
       </div>
-      <div>
+      <div className="flex flex-col items-center gap-3">
         <Button href={hero.cta.url}>
           {hero.cta.text}
         </Button>
+        <a
+          href="/curriculum"
+          className="text-white underline text-lg hover:text-white/80"
+        >
+          View curriculum →
+        </a>
       </div>
     </div>
   );

@@ -18,8 +18,8 @@
   --color-gray-dark: #232339;
   --color-gray: #595a6c;
   --color-gray-light: #626262;
-  --color-bg: #FAFAFA;
-  --color-bg-grid: #F4F4F4;
+  --color-bg: #F5F7FB;
+  --color-bg-grid: #E8EAF2;
   
   /* Typography */
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
@@ -52,14 +52,4 @@
   
   /* Grid Pattern */
   --grid-size: 60px;
-}
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0f1b2b;
-    --color-bg-grid: #1a2942;
-    --color-white: #0f1b2b;
-    --color-black: #ffffff;
-  }
 }
