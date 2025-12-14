@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CONTENT } from "@/lib/content";
+import { COLORS } from "@/lib/constants";
 
 export default function Approach() {
   const { approach } = CONTENT;
@@ -12,7 +13,7 @@ export default function Approach() {
           {approach.title.line1}<br/>
           {approach.title.line2}
         </h1>
-        <p className="text-xl text-[#626262] text-center w-[60svw]">
+        <p className="text-xl text-center w-[60svw]" style={{ color: COLORS.grayText }}>
           {approach.description}
         </p>
       </div>
@@ -28,7 +29,7 @@ export default function Approach() {
                   <h2 className="text-3xl font-bold text-black mb-4">
                     {feature.title}
                   </h2>
-                  <p className="text-xl text-[#626262]">
+                  <p className="text-xl" style={{ color: COLORS.grayText }}>
                     {feature.description}
                   </p>
                 </div>
@@ -55,7 +56,7 @@ export default function Approach() {
                   <h2 className="text-3xl font-bold text-black mb-4">
                     {feature.title}
                   </h2>
-                  <p className="text-xl text-[#626262]">
+                  <p className="text-xl" style={{ color: COLORS.grayText }}>
                     {feature.description}
                   </p>
                 </div>

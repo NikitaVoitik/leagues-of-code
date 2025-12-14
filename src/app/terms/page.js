@@ -2,6 +2,7 @@ import React from 'react';
 import Separator from '@/components/ui/Separator';
 import LegalPageLayout from '@/components/layouts/LegalPageLayout';
 import { CONTENT } from '@/lib/content';
+import { COLORS } from '@/lib/constants';
 
 export const metadata = {
   title: "Terms of Service - Leagues of Code",
@@ -18,8 +19,8 @@ export default function TermsOfService() {
     >
 
           {/* About Section */}
-          <section className="mb-12 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-[#1836CF] rounded-md shadow-[4px_4px_0px_0px_#1836CF]">
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+          <section className="mb-12 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 rounded-md" style={{ borderColor: COLORS.primaryDark, boxShadow: `4px 4px 0px 0px ${COLORS.primaryDark}` }}>
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <h3 className="text-xl font-bold text-black mb-4">About Leagues of Code</h3>
               <div className="grid md:grid-cols-2 gap-4 text-sm">
                 <div>
@@ -45,7 +46,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Minimum Requirements for Contracting of Service
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Minimum student age:</strong> 9 years old</li>
                 <li><strong>English knowledge level:</strong> Advanced</li>
@@ -68,7 +69,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Free Trial and Starting Dates
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <p>
                 Every student who signs up to the program benefits from a free induction period, which includes an orientation session, the placement test (to understand their level) and the first module.
               </p>
@@ -85,7 +86,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Content, Duration, Schedule of the Course
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <p>
                 The LoC curriculum spans the full spectrum from absolute beginner to the most advanced international programming competition level such as IOI.
               </p>
@@ -117,7 +118,7 @@ export default function TermsOfService() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white border-2 border-black rounded-md shadow-[4px_4px_0px_0px_#000000] p-6">
                 <h3 className="text-xl font-bold text-black mb-3">Hello World Programme</h3>
-                <p className="text-[#444444] mb-3">
+                <p className="mb-3" style={{ color: COLORS.grayTextDark }}>
                   A 12-week programme designed for coding enthusiasts, aged 10+ who want to start their programming journey with Python.
                 </p>
                 <div className="bg-green-50 border border-green-200 rounded p-3">
@@ -128,7 +129,7 @@ export default function TermsOfService() {
 
               <div className="bg-white border-2 border-black rounded-md shadow-[4px_4px_0px_0px_#000000] p-6">
                 <h3 className="text-xl font-bold text-black mb-3">LoC Olympics</h3>
-                <p className="text-[#444444] mb-3">
+                <p className="mb-3" style={{ color: COLORS.grayTextDark }}>
                   Training program for Spanish Computer Science Olympiads using C++. Course runs from November 1st to June 30th.
                 </p>
                 <div className="bg-green-50 border border-green-200 rounded p-3">
@@ -147,20 +148,20 @@ export default function TermsOfService() {
             </h2>
             <div className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-[#1836CF] text-white p-6 rounded-md border-2 border-black shadow-[4px_4px_0px_0px_#000000]">
+                <div className="text-white p-6 rounded-md border-2 border-black shadow-[4px_4px_0px_0px_#000000]" style={{ backgroundColor: COLORS.primaryDark }}>
                   <h4 className="text-xl font-bold mb-2">Monthly Plan</h4>
                   <p className="text-3xl font-bold mb-2">€199/month</p>
                   <p className="text-sm opacity-90">Per module payment</p>
                 </div>
-                <div className="bg-white p-6 rounded-md border-2 border-[#1836CF] shadow-[4px_4px_0px_0px_#1836CF]">
+                <div className="bg-white p-6 rounded-md border-2" style={{ borderColor: COLORS.primaryDark, boxShadow: `4px 4px 0px 0px ${COLORS.primaryDark}` }}>
                   <h4 className="text-xl font-bold mb-2 text-black">Annual Plan</h4>
-                  <p className="text-3xl font-bold mb-2 text-[#1836CF]">€1,499/year</p>
-                  <p className="text-sm text-[#444444]">Includes all 10 modules + activities</p>
+                  <p className="text-3xl font-bold mb-2" style={{ color: COLORS.primaryDark }}>€1,499/year</p>
+                  <p className="text-sm" style={{ color: COLORS.grayTextDark }}>Includes all 10 modules + activities</p>
                 </div>
               </div>
 
               <div className="bg-gray-50 border border-gray-200 rounded-md p-4">
-                <p className="text-sm text-[#444444]">
+                <p className="text-sm" style={{ color: COLORS.grayTextDark }}>
                   <strong>Extra one-on-ones:</strong> 35 EUR per 45-minute session (book 3 days in advance)<br/>
                   <strong>Payment methods:</strong> Credit card via Stripe (preferred), PayPal, Bank Transfer (upon request)
                 </p>
@@ -174,7 +175,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Refund and Cancellation Policy
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <div className="bg-red-50 border-l-4 border-red-400 p-4">
                 <p><strong>Monthly Payment Plan:</strong> No refunds available.</p>
               </div>
@@ -194,7 +195,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Zero Tolerance on Cheating
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <div className="bg-red-50 border-2 border-red-200 rounded-md p-4">
                 <p>
                   We have zero tolerance for any sort of fraud and cheating (students must solve the problems on their own and not copy others). Cheating can lead to a termination of the agreement, at our discretion.
@@ -207,7 +208,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Intellectual Property and Use of Contents
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <p>
                 All texts, logos, graphics, images, source codes and contents are the property of &quot;LoC&quot; or of third parties from which they have acquired their exploitation rights, and are protected by intellectual and industrial property rights.
               </p>
@@ -226,7 +227,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Applicable Law and Jurisdiction
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <p>
                 Everything regarding online courses access and platform usage is governed exclusively by Spanish law. In the event of any discrepancy or difference between the parties, they must be submitted to the Courts and Tribunals of Barcelona (Spain).
               </p>
@@ -240,11 +241,11 @@ export default function TermsOfService() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Contact Information
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <p>
                 If you have any questions about these Terms of Service, please contact us:
               </p>
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-[#1836CF] rounded-md shadow-[4px_4px_0px_0px_#1836CF] p-6">
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 rounded-md p-6" style={{ borderColor: COLORS.primaryDark, boxShadow: `4px 4px 0px 0px ${COLORS.primaryDark}` }}>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <p><strong>Email:</strong> {footer.contact.email}</p>

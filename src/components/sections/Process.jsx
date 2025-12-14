@@ -1,5 +1,6 @@
 import React from 'react';
 import { CONTENT } from "@/lib/content";
+import { COLORS } from "@/lib/constants";
 
 export default function Process() {
   const { process } = CONTENT;
@@ -12,7 +13,7 @@ export default function Process() {
           {process.title.line1}<br/>
           {process.title.line2}
         </h1>
-        <p className="text-xl text-[#626262] text-center w-[60svw]">
+        <p className="text-xl text-center w-[60svw]" style={{ color: COLORS.grayText }}>
           {process.description}
         </p>
       </div>
@@ -25,7 +26,7 @@ export default function Process() {
             className="flex items-start gap-8 p-8 bg-white border-2 border-black rounded-md shadow-[4px_4px_0px_0px_#000000] hover:shadow-[6px_6px_0px_0px_#000000] transition-all duration-200 ease-in-out"
           >
             <div className="flex-shrink-0">
-              <div className="text-3xl font-bold text-white bg-[#1836CF] border-2 border-black rounded-md w-16 h-16 flex items-center justify-center shadow-[2px_2px_0px_0px_#000000]">
+              <div className="text-3xl font-bold text-white border-2 border-black rounded-md w-16 h-16 flex items-center justify-center shadow-[2px_2px_0px_0px_#000000]" style={{ backgroundColor: COLORS.primaryDark }}>
                 {step.number}
               </div>
             </div>
@@ -33,7 +34,7 @@ export default function Process() {
               <h3 className="text-3xl font-bold text-black mb-4">
                 {step.title}
               </h3>
-              <p className="text-xl text-[#626262] leading-relaxed">
+              <p className="text-xl leading-relaxed" style={{ color: COLORS.grayText }}>
                 {step.description}
               </p>
             </div>

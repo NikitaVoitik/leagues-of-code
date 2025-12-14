@@ -380,23 +380,11 @@
   transform: scale(1.15);
 }
 
-/* Active timeline node */
+/* Active timeline node - simple highlight */
 .timeline-node.active .timeline-node__circle {
   background-color: var(--league-color);
   color: var(--color-white);
-  transform: scale(1.2);
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3),
-              0 0 20px var(--league-color);
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1.2);
-  }
-  50% {
-    transform: scale(1.25);
-  }
+  transform: scale(1.15);
 }
 
 .timeline-node__label {
@@ -480,11 +468,11 @@
   border: 2px solid var(--league-color);
   border-radius: 12px;
   padding: var(--space-xl);
-  cursor: pointer;
-  transition: all 0.4s ease-out;
+  transition: opacity 0.3s ease, z-index 0.3s ease;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  pointer-events: none; /* Disable all card interactions */
   
-  /* Simpler Stacking - Cards spread downward */
+  /* Simple stacking - Cards spread downward */
   transform: 
     translate(-50%, -50%)
     translateY(calc(var(--index) * 20px))
@@ -512,64 +500,6 @@
       translateY(calc(var(--index) * 20px))
       scale(calc(1 - var(--index) * 0.03));
   }
-}
-
-.stack-card:hover {
-  transform: 
-    translate(-50%, -50%)
-    translateY(calc(var(--index) * 20px - 30px))
-    scale(1);
-  z-index: 100;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-  border-width: 3px;
-}
-
-/* Active state when clicked */
-.stack-card.active {
-  transform: 
-    translate(-50%, -50%)
-    translateY(calc(var(--index) * 20px - 40px))
-    scale(1.02);
-  z-index: 101;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
-  border-width: 3px;
-}
-
-/* Card activated from timeline */
-.stack-card.card-active {
-  z-index: 1000 !important;
-  border-width: 4px;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3),
-              0 0 40px var(--league-color);
-  animation: cardReveal 0.5s ease-out;
-}
-
-@keyframes cardReveal {
-  from {
-    transform: translate(-50%, -50%) translateY(30px) scale(0.95);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, -50%) translateY(0) scale(1.05);
-    opacity: 1;
-  }
-}
-
-.stack-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, 
-    transparent 0%, 
-    var(--league-color) 100%
-  );
-  opacity: 0;
-  border-radius: 12px;
-  transition: opacity 0.3s ease;
-}
-
-.stack-card:hover::before {
-  opacity: 0.05;
 }
 
 .stack-card__number {
@@ -627,34 +557,7 @@
   opacity: 0.3;
 }
 
-.stack-hint {
-  font-size: 0.875rem;
-  color: var(--color-gray-light);
-  text-align: center;
-  font-style: italic;
-  margin-block-start: var(--space-md);
-}
-
-/* Visual hint that cards are clickable */
-.stack-card::after {
-  content: '👆';
-  position: absolute;
-  inset-block-end: var(--space-md);
-  inset-inline-end: var(--space-md);
-  font-size: 1.5rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.stack-card:hover::after {
-  opacity: 0.3;
-}
-
 @media (max-width: 768px) {
-  .stack-card::after {
-    content: '👇';
-  }
-  
   .stack-deck {
     block-size: 400px;
   }
@@ -662,26 +565,10 @@
   .stack-card {
     block-size: 220px;
     padding: var(--space-md);
-    /* Spread cards more on mobile for easier touch */
     transform: 
       translate(-50%, -50%)
       translateY(calc(var(--index) * 30px))
       scale(calc(1 - var(--index) * 0.04));
-  }
-  
-  .stack-card:hover,
-  .stack-card:active {
-    transform: 
-      translate(-50%, -50%)
-      translateY(calc(var(--index) * 30px - 20px))
-      scale(1);
-  }
-  
-  .stack-card.active {
-    transform: 
-      translate(-50%, -50%)
-      translateY(calc(var(--index) * 30px - 25px))
-      scale(1.02);
   }
   
   .stack-card__number {

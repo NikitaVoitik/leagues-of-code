@@ -6,3 +6,4 @@ export const metadata = {
 export default function CurriculumLayout({ children }) {
   return children;
 }
+

@@ -36,7 +36,6 @@ export default function CurriculumPage() {
 
       setupEventListeners() {
         this.setupTimelineNodes();
-        this.setupStackCards();
       },
 
       setupTimelineNodes() {
@@ -44,25 +43,18 @@ export default function CurriculumPage() {
         const cards = document.querySelectorAll('.stack-card');
         
         nodes.forEach(node => {
+          // Show card on hover
           node.addEventListener('mouseenter', () => {
             const leagueId = node.dataset.leagueId;
-            console.log(`⏱️ Timeline hover: ${leagueId}`);
-            
             nodes.forEach(n => n.classList.remove('active'));
             node.classList.add('active');
-            
             this.showCard(leagueId, cards);
           });
 
-          node.setAttribute('tabindex', '0');
-          node.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              const leagueId = node.dataset.leagueId;
-              nodes.forEach(n => n.classList.remove('active'));
-              node.classList.add('active');
-              this.showCard(leagueId, cards);
-            }
+          // Reset on mouse leave
+          node.addEventListener('mouseleave', () => {
+            nodes.forEach(n => n.classList.remove('active'));
+            this.resetCards(cards);
           });
         });
       },
@@ -70,21 +62,20 @@ export default function CurriculumPage() {
       showCard(leagueId, cards) {
         cards.forEach((card) => {
           if (card.dataset.leagueId === leagueId) {
-            card.classList.add('card-active');
-            card.style.zIndex = '1000';
-            card.style.transform = 'translate(-50%, -50%) translateY(0) scale(1.05)';
+            card.style.zIndex = '100';
             card.style.opacity = '1';
           } else {
-            card.classList.remove('card-active');
             card.style.zIndex = '';
-            card.style.transform = '';
-            card.style.opacity = '0.3';
+            card.style.opacity = '0.5';
           }
         });
       },
 
-      setupStackCards() {
-        // Cards controlled by timeline hover
+      resetCards(cards) {
+        cards.forEach(card => {
+          card.style.zIndex = '';
+          card.style.opacity = '1';
+        });
       },
 
       setupAccessibility() {

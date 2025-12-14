@@ -268,5 +268,5 @@ export const EXTERNAL_LINKS = {
   booking: process.env.NEXT_PUBLIC_BOOKING_URL || 'https://harbour-space.typeform.com/to/gxFFkidp?typeform-source=join.leaguesofcode.com',
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || '',
   facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || '',
-  email: process.env.NEXT_PUBLIC_EMAIL || 'info@leaguesofcode.com',
+  email: process.env.NEXT_PUBLIC_EMAIL || 'hello@leaguesofcode.com',
 };

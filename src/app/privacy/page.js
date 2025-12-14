@@ -2,6 +2,7 @@ import React from 'react';
 import Separator from '@/components/ui/Separator';
 import LegalPageLayout from '@/components/layouts/LegalPageLayout';
 import { CONTENT } from '@/lib/content';
+import { COLORS } from '@/lib/constants';
 
 export const metadata = {
   title: "Privacy Policy - Leagues of Code",
@@ -18,8 +19,8 @@ export default function PrivacyPolicy() {
     >
 
           {/* Introduction */}
-          <section className="mb-12 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-[#1836CF] rounded-md shadow-[4px_4px_0px_0px_#1836CF]">
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+          <section className="mb-12 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 rounded-md" style={{ borderColor: COLORS.primaryDark, boxShadow: `4px 4px 0px 0px ${COLORS.primaryDark}` }}>
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <h3 className="text-xl font-bold text-black mb-4">Introduction</h3>
               <p>
                 At Leagues of Code, accessible from leaguesofcode.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Leagues of Code and how we use it.
@@ -33,7 +34,7 @@ export default function PrivacyPolicy() {
           <Separator text="Consent" />
 
           <section className="mb-8">
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <p>
                 By using our website, you hereby consent to our Privacy Policy and agree to its terms.
               </p>
@@ -46,7 +47,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Information We Collect
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <p>
                 The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.
               </p>
@@ -59,7 +60,7 @@ export default function PrivacyPolicy() {
 
               <div className="bg-white border-2 border-black rounded-md shadow-[4px_4px_0px_0px_#000000] p-6">
                 <h3 className="text-xl font-bold text-black mb-4">Categories of Personal Data</h3>
-                <ul className="list-disc pl-6 space-y-2 text-[#444444]">
+                <ul className="list-disc pl-6 space-y-2" style={{ color: COLORS.grayTextDark }}>
                   <li>Name</li>
                   <li>Nationality</li>
                   <li>Email</li>
@@ -77,7 +78,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Retention Period
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
                 <p>
                   The retention period lasts until you have been accepted/declined entry to the course or programme and as necessary to comply with any such legal obligation to which Leagues of Code is subject.
@@ -92,7 +93,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               How We Use Your Information
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <p>
                 We use the information we collect in various ways, including to:
               </p>
@@ -113,7 +114,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Log Files
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <p>
                 Leagues of Code follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this as part of hosting services&apos; analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.
               </p>
@@ -129,7 +130,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Cookies and Web Beacons
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <p>
                 Like any other website, Leagues of Code uses &apos;cookies&apos;. These cookies are used to store information including visitors preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users&apos; experience by customizing our web page content based on visitors&apos; browser type and/or other information.
               </p>
@@ -156,7 +157,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Advertising Partners Privacy Policies
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <p>
                 You may consult this list to find the Privacy Policy for each of the advertising partners of Leagues of Code.
               </p>
@@ -175,7 +176,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Third Party Privacy Policy
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <p>
                 Leagues of Code&apos;s Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.
               </p>
@@ -202,7 +203,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               GDPR Data Protection Rights
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <p>
                 We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:
               </p>
@@ -253,7 +254,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Children&apos;s Information
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <div className="bg-orange-50 border-2 border-orange-200 rounded-md p-4">
                 <p>
                   Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.
@@ -268,11 +269,11 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Contact Information
             </h2>
-            <div className="space-y-4 text-[#444444] leading-relaxed">
+            <div className="space-y-4 leading-relaxed" style={{ color: COLORS.grayTextDark }}>
               <p>
                 If you have any questions regarding our Privacy Policy or any other question regarding our processing, please contact us:
               </p>
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-[#1836CF] rounded-md shadow-[4px_4px_0px_0px_#1836CF] p-6">
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 rounded-md p-6" style={{ borderColor: COLORS.primaryDark, boxShadow: `4px 4px 0px 0px ${COLORS.primaryDark}` }}>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <p><strong>Email:</strong> {footer.contact.email}</p>

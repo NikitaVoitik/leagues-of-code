@@ -1,11 +1,11 @@
 import React from 'react';
+import { COLORS } from "@/lib/constants";
 
 const Button = ({ children, onClick, href, disabled = false, className = '', ...props }) => {
   const baseClass = `
     px-7 py-4
-    bg-[#1836CF] 
-    text-white 
-    border-2 border-black 
+    text-white
+    border-2 border-black
     rounded-md
     text-lg
     shadow-[4px_4px_0px_0px_#000000]
@@ -17,12 +17,17 @@ const Button = ({ children, onClick, href, disabled = false, className = '', ...
     ${className}
   `;
 
+  const buttonStyle = {
+    backgroundColor: COLORS.primaryDark
+  };
+
   // If href is provided, render as link
   if (href) {
     return (
       <a
         href={href}
         className={baseClass}
+        style={buttonStyle}
         target={href.startsWith('http') ? '_blank' : undefined}
         rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
         {...props}
@@ -36,6 +41,7 @@ const Button = ({ children, onClick, href, disabled = false, className = '', ...
   return (
     <button
       className={baseClass}
+      style={buttonStyle}
       onClick={onClick}
       disabled={disabled}
       {...props}

@@ -1,5 +1,3 @@
-'use client'
-
 import Button from "@/components/ui/Button";
 import { CONTENT } from "@/lib/content";
 import { COLORS, STYLES, GRID_SIZES } from "@/lib/constants";

@@ -1,5 +1,6 @@
 import React from 'react';
 import { CONTENT } from "@/lib/content";
+import { COLORS } from "@/lib/constants";
 
 export default function Reviews() {
   const { reviews } = CONTENT;
@@ -11,7 +12,7 @@ export default function Reviews() {
         <h1 className="text-5xl font-bold text-black text-center">
           {reviews.title}
         </h1>
-        <p className="text-xl text-[#626262] text-center w-[60svw]">
+        <p className="text-xl text-center w-[60svw]" style={{ color: COLORS.grayText }}>
           {reviews.description}
         </p>
       </div>
@@ -30,19 +31,19 @@ export default function Reviews() {
               className="bg-white border-2 border-black rounded-md shadow-[4px_4px_0px_0px_#000000] hover:shadow-[6px_6px_0px_0px_#000000] transition-all duration-200 ease-in-out p-6 break-inside-avoid mb-8 inline-block w-full"
             >
               {/* Quote Icon */}
-              <div className="text-6xl text-[#1836CF] font-bold leading-none">"</div>
+              <div className="text-6xl font-bold leading-none" style={{ color: COLORS.primaryDark }}>"</div>
 
               {/* Review Text */}
-              <p className="text-lg text-[#626262] leading-relaxed mb-6">
+              <p className="text-lg leading-relaxed mb-6" style={{ color: COLORS.grayText }}>
                 {review.text}
               </p>
 
               {/* Author Info */}
-              <div className="border-t-2 border-[#F4F4F4] pt-4">
-                <h4 className="text-xl font-bold text-[#1836CF] mb-1">
+              <div className="border-t-2 pt-4" style={{ borderColor: COLORS.backgroundGrid }}>
+                <h4 className="text-xl font-bold mb-1" style={{ color: COLORS.primaryDark }}>
                   {review.author}
                 </h4>
-                <p className="text-lg text-[#626262]">
+                <p className="text-lg" style={{ color: COLORS.grayText }}>
                   {review.role}
                 </p>
               </div>

@@ -3,19 +3,40 @@
  * 
  * This file contains design tokens that are actively used in the application.
  * Colors that can't be used in Tailwind className props are defined here for use in inline styles.
+ * Project must follow current colore schema and not create a new entyties
  */
 
 // ============================================================================
-// COLORS - Used in inline styles (style prop) and STYLES.gridBackground()
+// COLORS - Centralized color palette for the entire application
+// Use these in inline styles (style prop) and for consistency across components
 // ============================================================================
 export const COLORS = {
-  // Hero Section Background
-  primary: '#1E3CD9',
-  primaryHover: '#2644E0',
-  
-  // Page Background
-  background: '#FAFAFA',
-  backgroundGrid: '#F4F4F4',
+  // Primary Brand Colors
+  primary: '#1E3CD9',           // Hero section gradient start
+  primaryDark: '#1836CF',       // Buttons, badges, footer background
+  primaryHover: '#2644E0',      // Hero gradient end, hover states
+
+  // Brand Accent Colors (LoC Brand Palette)
+  blue: '#3959ff',              // Brand primary blue
+  skyBlue: '#38c9ff',          // Sky blue accent
+  yellow: '#f8cd46',           // Yellow accent
+  red: '#eb4869',              // Red accent
+  purple: '#cf75ff',           // Purple accent
+  green: '#23c175',            // Green accent
+
+  // Neutral Colors
+  white: '#ffffff',
+  black: '#000000',
+
+  // Gray Scale
+  grayDark: '#232339',         // Dark gray
+  gray: '#595a6c',             // Medium gray
+  grayText: '#626262',         // Body text, descriptions
+  grayTextDark: '#444444',     // Legal pages text
+
+  // Background Colors
+  background: '#FAFAFA',       // Page background
+  backgroundGrid: '#F4F4F4',   // Grid pattern color
 };
 
 // ============================================================================
@@ -54,19 +75,14 @@ export const STYLES = {
 };
 
 // ============================================================================
-// DESIGN REFERENCE - Not actively used but kept for documentation
+// SHADOW UTILITIES - Common shadow patterns
 // ============================================================================
 /**
- * LoC Brand Colors (from design spec)
- * These are used directly in Tailwind classes (e.g., bg-[#3959ff])
- * 
- * Blue:       #3959ff
- * Sky Blue:   #38c9ff
- * Yellow:     #f8cd46
- * Red:        #eb4869
- * Purple:     #cf75ff
- * Green:      #23c175
- * White:      #ffffff
- * Dark:       #232339
- * Gray:       #595a6c
+ * Reusable shadow classes for Tailwind
+ * Use these in className props for consistent shadow effects
+ *
+ * Example usage:
+ * - Default: shadow-[4px_4px_0px_0px_#000000]
+ * - Hover: hover:shadow-[6px_6px_0px_0px_#000000]
+ * - Active: active:shadow-[2px_2px_0px_0px_#000000]
  */

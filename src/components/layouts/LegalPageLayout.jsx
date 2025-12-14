@@ -1,4 +1,5 @@
 import React from 'react';
+import { COLORS } from "@/lib/constants";
 
 export default function LegalPageLayout({ title, lastUpdated, children }) {
   return (
@@ -10,7 +11,7 @@ export default function LegalPageLayout({ title, lastUpdated, children }) {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
               {title}
             </h1>
-            <p className="text-lg text-[#626262]">
+            <p className="text-lg" style={{ color: COLORS.grayText }}>
               Last updated: {lastUpdated}
             </p>
           </div>
