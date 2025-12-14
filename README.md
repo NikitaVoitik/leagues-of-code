@@ -27,7 +27,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. Open http://localhost:3000 in your browser
 
 ## 📁 Project Structure
 
@@ -35,39 +35,40 @@ npm run dev
 LoC/
 ├── src/
 │   ├── app/                      # Next.js App Router
-│   │   ├── page.js              # Homepage
-│   │   ├── layout.js            # Root layout (Inter font, GA)
+│   │   ├── page.tsx             # Homepage (typed)
+│   │   ├── layout.tsx           # Root layout (Inter font, GA, typed)
 │   │   ├── globals.css          # Global styles
-│   │   ├── curriculum/          # Curriculum page
-│   │   ├── privacy/             # Privacy policy page
-│   │   └── terms/               # Terms of service page
+│   │   ├── curriculum/          # Curriculum page (client, typed)
+│   │   ├── privacy/             # Privacy policy page (typed)
+│   │   └── terms/               # Terms of service page (typed)
 │   │
 │   ├── components/
 │   │   ├── sections/            # Page sections
-│   │   │   ├── Hero.jsx         # Hero section
-│   │   │   ├── Approach.jsx     # Approach section
-│   │   │   ├── Process.jsx      # Process section
-│   │   │   ├── Reviews.jsx      # Reviews/testimonials
-│   │   │   └── Footer.jsx       # Footer with CTA
+│   │   │   ├── Hero.tsx         # Hero section (typed)
+│   │   │   ├── Approach.tsx     # Approach section (typed)
+│   │   │   ├── Process.tsx      # Process section (typed)
+│   │   │   ├── Reviews.tsx      # Reviews/testimonials (typed)
+│   │   │   └── Footer.tsx       # Footer with CTA (typed)
 │   │   │
 │   │   ├── ui/                  # Reusable UI components
-│   │   │   ├── Button.jsx       # CTA button
-│   │   │   └── Separator.jsx    # Section separator
+│   │   │   ├── Button.tsx       # CTA button (typed)
+│   │   │   └── Separator.tsx    # Section separator (typed)
 │   │   │
 │   │   └── layouts/             # Layout components
-│   │       └── LegalPageLayout.jsx  # Legal pages wrapper
+│   │       └── LegalPageLayout.tsx  # Legal pages wrapper (typed)
 │   │
 │   └── lib/                     # Utilities & data
-│       ├── content.js           # All text content (Single Source of Truth)
-│       └── constants.js         # Design system (colors, styles, grid)
+│       ├── content.ts           # All text content (Single Source of Truth, typed)
+│       └── constants.ts         # Design system (colors, styles, grid, typed)
 │
 ├── public/                      # Static assets
 │   ├── favicon.png
-│   ├── 1.png                    # Approach images (optimize: 871KB → 200KB)
-│   └── 2.png                    # Approach images (optimize: 319KB → 80KB)
+│   ├── 1.png                    # Approach image (full quality)
+│   └── 2.png                    # Approach image (full quality)
 │
 ├── .env.example                 # Environment variables template
 ├── .env.local                   # Your actual env vars (gitignored)
+├── tsconfig.json                # TypeScript config (paths, strict mode)
 ├── refactoring_next.md          # Refactoring log & next steps
 └── package.json
 ```
@@ -75,7 +76,7 @@ LoC/
 ## ✏️ How to Update Content
 
 ### Update Text Content
-All text is centralized in `src/lib/content.js`:
+All text is centralized in `src/lib/content.ts`:
 
 ```javascript
 // Example: Change hero title
@@ -91,7 +92,7 @@ export const CONTENT = {
 ```
 
 ### Update Contact Information
-Edit once in `src/lib/content.js`:
+Edit once in `src/lib/content.ts`:
 ```javascript
 footer: {
   contact: {
@@ -120,7 +121,7 @@ legal: {
 
 ## 🎨 Design System
 
-All design tokens centralized in `src/lib/constants.js` for consistency.
+All design tokens centralized in `src/lib/constants.ts` for consistency.
 
 ### Colors
 **Always import from constants:**
@@ -175,12 +176,15 @@ npm run preview    # Build + start production locally
 See `.env.example` for all available variables:
 - `NEXT_PUBLIC_BOOKING_URL` - Typeform booking link
 - `NEXT_PUBLIC_EMAIL` - Contact email
-- Google Analytics is configured in `layout.js`
+- `NEXT_PUBLIC_SITE_URL` - Public site URL for metadata/OG tags
+- `NEXT_PUBLIC_GA_ID` - Google Analytics ID (omit to disable)
+- `NEXT_PUBLIC_INSTAGRAM_URL`, `NEXT_PUBLIC_FACEBOOK_URL` - Social links (optional)
 
 ## 📊 Tech Stack
 
 - **Framework:** Next.js 15.5.2 (App Router, SSR optimized)
 - **React:** 19.1.0
+- **TypeScript:** Tooling enabled (tsconfig, strict mode; migration in progress)
 - **Styling:** Tailwind CSS 4 + Centralized design system
 - **Icons:** Lucide React
 - **Font:** Inter (Google Fonts)

@@ -1,7 +1,13 @@
 import React from 'react';
 import { COLORS } from "@/lib/constants";
 
-export default function LegalPageLayout({ title, lastUpdated, children }) {
+type LegalPageLayoutProps = {
+  title: string;
+  lastUpdated: string;
+  children: React.ReactNode;
+};
+
+export default function LegalPageLayout({ title, lastUpdated, children }: LegalPageLayoutProps) {
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8 md:py-16">

@@ -1,8 +1,12 @@
 import React from 'react';
-import {Diamond} from "lucide-react";
+import { Diamond } from "lucide-react";
 import { COLORS } from "@/lib/constants";
 
-const Separator = ({text}) => {
+type SeparatorProps = {
+  text: string;
+};
+
+const Separator = ({ text }: SeparatorProps) => {
   return (
     <div className="w-full my-10">
       <Diamond className="h-4 w-4 mx-auto" fill={COLORS.blue} stroke={COLORS.blue}/>

@@ -1,14 +1,16 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type CSSProperties } from 'react';
 import Footer from "@/components/sections/Footer";
 import Separator from "@/components/ui/Separator";
 import { CONTENT } from "@/lib/content";
 import './curriculum.css';
 
+const cssVars = (vars: Record<string, string | number>): CSSProperties => vars as CSSProperties;
+
 export default function CurriculumPage() {
   const { curriculum } = CONTENT;
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   useEffect(() => {
     // Initialize curriculum page interactions
@@ -21,7 +23,7 @@ export default function CurriculumPage() {
       },
 
       setupHeroAnimations() {
-        const hero = document.querySelector('.curriculum-hero');
+        const hero = document.querySelector<HTMLElement>('.curriculum-hero');
         if (!hero) return;
 
         hero.style.opacity = '0';
@@ -39,8 +41,8 @@ export default function CurriculumPage() {
       },
 
       setupTimelineNodes() {
-        const nodes = document.querySelectorAll('.timeline-node');
-        const cards = document.querySelectorAll('.stack-card');
+        const nodes = document.querySelectorAll<HTMLElement>('.timeline-node');
+        const cards = document.querySelectorAll<HTMLElement>('.stack-card');
         
         nodes.forEach(node => {
           // Show card on hover
@@ -59,7 +61,7 @@ export default function CurriculumPage() {
         });
       },
 
-      showCard(leagueId, cards) {
+      showCard(leagueId: string | undefined, cards: NodeListOf<HTMLElement>) {
         cards.forEach((card) => {
           if (card.dataset.leagueId === leagueId) {
             card.style.zIndex = '100';
@@ -71,7 +73,7 @@ export default function CurriculumPage() {
         });
       },
 
-      resetCards(cards) {
+      resetCards(cards: NodeListOf<HTMLElement>) {
         cards.forEach(card => {
           card.style.zIndex = '';
           card.style.opacity = '1';
@@ -79,14 +81,16 @@ export default function CurriculumPage() {
       },
 
       setupAccessibility() {
-        const ctaButton = document.querySelector('.curriculum-hero__cta');
+        const ctaButton = document.querySelector<HTMLAnchorElement>('.curriculum-hero__cta');
         if (ctaButton) {
           ctaButton.addEventListener('focus', (e) => {
-            e.target.style.outline = '3px solid var(--color-yellow)';
-            e.target.style.outlineOffset = '2px';
+            const target = e.target as HTMLElement;
+            target.style.outline = '3px solid var(--color-yellow)';
+            target.style.outlineOffset = '2px';
           });
           ctaButton.addEventListener('blur', (e) => {
-            e.target.style.outline = '';
+            const target = e.target as HTMLElement;
+            target.style.outline = '';
           });
         }
       }
@@ -141,7 +145,7 @@ export default function CurriculumPage() {
                       key={league.id}
                       className="timeline-node"
                       data-league-id={league.id}
-                      style={{ '--league-color': league.color, '--index': index }}
+                      style={cssVars({ '--league-color': league.color, '--index': index })}
                     >
                       <div className="timeline-node__circle">{league.displayNumber}</div>
                       <div className="timeline-node__label">{league.name}</div>
@@ -159,11 +163,11 @@ export default function CurriculumPage() {
                       className="stack-card"
                       data-league-id={league.id}
                       data-index={index}
-                      style={{ 
+                      style={cssVars({ 
                         '--league-color': league.color,
                         '--index': index,
                         '--total': curriculum.leagues.length
-                      }}
+                      })}
                     >
                       <div className="stack-card__number">{league.displayNumber}</div>
                       <div className="stack-card__content">
@@ -205,7 +209,7 @@ export default function CurriculumPage() {
                 id={`detail-${league.id}`}
                 className="league-detail"
                 data-league-id={league.id}
-                style={{ '--league-color': league.color }}
+                style={cssVars({ '--league-color': league.color })}
               >
                 <div className="league-detail__container">
                   {/* LEFT SIDE - Sticky Description */}

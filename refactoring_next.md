@@ -31,7 +31,7 @@ Improve the codebase through:
 
 #### 1. Color System Centralization
 
-**Enhanced `src/lib/constants.js`:**
+**Enhanced `src/lib/constants.ts`:**
 ```javascript
 // Added 15 semantic color constants
 export const COLORS = {
@@ -111,6 +111,23 @@ export const COLORS = {
 
 ---
 
+### Phase 3: Asset Optimization
+
+- Kept `public/1.png` and `public/2.png` as the primary assets to preserve maximum quality. WebP exports are optional if we want lighter weight later; references now point to the original PNGs.
+- Note: Page size is already light, so quality is prioritized over compression for these hero images.
+
+### Phase 4: TypeScript Foundation
+
+- Added TypeScript toolchain (`typescript`, `@types/react`, `@types/node`) and created `tsconfig.json` with path aliases and strict mode.
+- Removed `jsconfig.json` in favor of `tsconfig.json`; added Next-generated `next-env.d.ts` (gitignored).
+- Converted foundational UI components to TS: `src/components/ui/Button.tsx`, `Separator.tsx` with typed props.
+- Migrated section and layout components to `.tsx` (Hero, Approach, Process, Reviews, Footer, LegalPageLayout).
+- Migrated Next app pages to `.tsx` (layout, home, privacy, terms, curriculum) with typed metadata where applicable.
+- Typed core libraries: `src/lib/constants.ts` (typed colors/grid utilities) and `src/lib/content.ts` (content model + exported types).
+- Updated lint/format scripts to include `.ts/.tsx`.
+
+---
+
 ## 📊 METRICS
 
 **Code Reduced:**
@@ -121,6 +138,7 @@ export const COLORS = {
 - Hardcoded colors: 108 → 7 (only black shadows)
 - Color centralization: 93% complete
 - Client components optimized: 2/3 converted to server components
+- TypeScript migration: tooling + core libs + all sections/layout/pages converted
 
 **Build Status:**
 ```bash
@@ -134,78 +152,12 @@ export const COLORS = {
 
 ## 📋 SCHEDULED FOR NEXT SESSION
 
-### Priority 1: Image Optimization (30 min)
+### Priority 1: Curriculum Page React-ification (1-2 hours)
 
-**Current State:**
-```
-public/1.png - 871 KB (1080x1080px)
-public/2.png - 319 KB (1080x1080px)
-Total: 1.19 MB
-```
+- Replace manual DOM/querySelector interactions in `src/app/curriculum/page.tsx` with React state/handlers or CSS hover, so we can drop imperative listeners and maybe remove `'use client'`.
+- Ensure animations/focus states remain intact; keep CSS variables approach.
 
-**Target:**
-- 1.png: 871 KB → ~200 KB (75% reduction)
-- 2.png: 319 KB → ~80 KB (75% reduction)
-- Total: ~280 KB (76% savings)
-
-**Tools to Use:**
-1. **Quick option:** TinyPNG.com (drag & drop)
-2. **Best option:** Resize to 800x800px + compress at 85% quality
-3. **Advanced:** Convert to WebP format
-
-**Display size:** ~500px wide on screen, so 800x800 covers retina displays
-
----
-
-### Priority 2: Content.js League Colors (15 min)
-
-**Current State:**
-```javascript
-// In src/lib/content.js
-leagues: [
-  { color: "#23c175" },  // Hardcoded
-  { color: "#38c9ff" },  // Hardcoded
-  // ...
-]
-```
-
-**Target:**
-```javascript
-import { COLORS } from './constants';
-
-leagues: [
-  { color: COLORS.green },
-  { color: COLORS.skyBlue },
-  { color: COLORS.blue },
-  { color: COLORS.purple },
-  { color: COLORS.red },
-]
-```
-
-**Impact:** Final 5 hardcoded colors eliminated, 100% centralization
-
----
-
-### Priority 3: TypeScript Migration (Optional, 2-3 hours)
-
-**Current State:**
-- jsconfig.json already configured
-- Path aliases working (@/components, @/lib)
-
-**Benefits:**
-- Type safety for content structures
-- Catch errors early
-- Better IDE autocomplete
-
-**Approach:**
-1. Rename `jsconfig.json` to `tsconfig.json`
-2. Add type definitions for CONTENT object
-3. Gradually convert .jsx → .tsx
-4. Start with simple components (Button, Separator)
-
----
-
-### Priority 4: Curriculum CSS Modularization (Optional, 1-2 hours)
+### Priority 2: Curriculum CSS Modularization (Optional, 1-2 hours)
 
 **Current:** Monolithic 795-line file
 
@@ -254,12 +206,12 @@ npm run dev
 ### File Locations
 
 **Colors:**
-- Source: `src/lib/constants.js` (COLORS object)
+- Source: `src/lib/constants.ts` (COLORS object)
 - Usage: Import `{ COLORS }` in any component
 
-**Images to Optimize:**
-- `public/1.png` (871 KB)
-- `public/2.png` (319 KB)
+**Images:**
+- `public/1.png` (1080x1080, ~871 KB) - kept full quality
+- `public/2.png` (1080x1080, ~326 KB) - kept full quality
 
 **Curriculum Styles:**
 - `src/app/curriculum/curriculum.css` (795 lines)
@@ -289,12 +241,12 @@ npm run dev
 
 Before deploying:
 1. ✅ Build succeeds (`npm run build`)
-2. ⏳ Images optimized (scheduled)
-3. ⏳ Content.js colors updated (scheduled)
+2. ✅ Images in place (full-quality PNGs; optional WebP if needed)
+3. ✅ Content.js colors centralized
 4. ✅ No console errors
 5. ✅ All pages render correctly
 
 ---
 
 **Last Updated:** December 14, 2024
-**Next Session:** Start with Priority 1 (Image Optimization)
+**Next Session:** Start with Priority 1 (TypeScript migration)

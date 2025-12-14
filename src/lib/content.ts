@@ -2,8 +2,129 @@
  * Content Management
  * All text content in one place for easy updates
  */
+import { COLORS } from './constants';
 
-export const CONTENT = {
+type TwoLineTitle = {
+  line1: string;
+  line2: string;
+};
+
+type CTA = {
+  text: string;
+  url: string;
+};
+
+type Feature = {
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+};
+
+type ProcessStep = {
+  number: string;
+  title: string;
+  description: string;
+};
+
+type Review = {
+  text: string;
+  author: string;
+  role: string;
+};
+
+type Footer = {
+  cta: {
+    title: string;
+    description: string;
+    buttonText: string;
+  };
+  company: {
+    name: string;
+    tagline: string;
+    address: string;
+    copyright: string;
+  };
+  contact: {
+    email: string;
+    phone: string;
+  };
+  links: {
+    terms: string;
+    privacy: string;
+  };
+};
+
+type CurriculumLeague = {
+  id: string;
+  name: string;
+  displayNumber: string;
+  level: string;
+  color: string;
+  tagline: string;
+  description: string;
+  practiceNote?: string;
+  special?: string;
+  modules: number;
+  topics: string[];
+};
+
+type Content = {
+  hero: {
+    title: TwoLineTitle;
+    description: string;
+    cta: CTA;
+  };
+  sections: {
+    approach: string;
+    process: string;
+    reviews: string;
+  };
+  approach: {
+    title: TwoLineTitle;
+    description: string;
+    features: Feature[];
+  };
+  process: {
+    title: TwoLineTitle;
+    description: string;
+    steps: ProcessStep[];
+  };
+  reviews: {
+    title: string;
+    description: string;
+    testimonials: Review[];
+  };
+  footer: Footer;
+  legal: {
+    privacy: { lastUpdated: string; title: string };
+    terms: { lastUpdated: string; title: string };
+  };
+  curriculum: {
+    hero: {
+      title: string;
+      subtitle: string;
+      description: string;
+    };
+    placement: {
+      title: string;
+      description: string;
+    };
+    leagues: CurriculumLeague[];
+  };
+};
+
+type ExternalLinks = {
+  booking: string;
+  instagram: string;
+  facebook: string;
+  email: string;
+};
+
+const DEFAULT_BOOKING_URL =
+  'https://harbour-space.typeform.com/to/gxFFkidp?typeform-source=join.leaguesofcode.com';
+
+export const CONTENT: Content = {
   hero: {
     title: {
       line1: "Where Learning",
@@ -12,7 +133,7 @@ export const CONTENT = {
     description: "We go beyond teaching Programming & Math by fostering meaningful connections with your child. Our instructors are not just mentors; they're friends, creating a personalised and educational experience.",
     cta: {
       text: "BOOK A FREE CLASS",
-      url: process.env.NEXT_PUBLIC_BOOKING_URL || 'https://harbour-space.typeform.com/to/gxFFkidp?typeform-source=join.leaguesofcode.com'
+      url: process.env.NEXT_PUBLIC_BOOKING_URL || DEFAULT_BOOKING_URL
     }
   },
 
@@ -160,7 +281,7 @@ export const CONTENT = {
         name: "League 5",
         displayNumber: "5",
         level: "Beginner",
-        color: "#23c175",
+        color: COLORS.green,
         tagline: "The beginning is a great place to start",
         description: "This chapter introduces students to the fundamentals of programming using Scratch, a visual programming language. The interactive and visual nature of Scratch helps learners grasp core programming concepts through engaging projects and games.",
         practiceNote: "Developing these skills demands serious practice, that's why we have over 200 practical problems ready to go.",
@@ -183,7 +304,7 @@ export const CONTENT = {
         name: "League 4",
         displayNumber: "4",
         level: "Elementary",
-        color: "#38c9ff",
+        color: COLORS.skyBlue,
         tagline: "Learn the basics of programming, fundamental concepts",
         description: "This chapter bridges the gap between visual programming in Scratch and text-based programming in Python. Students learn Python syntax and basics, comparing it with Scratch to ease the transition. They will replicate simple Scratch projects in Python to solidify their understanding.",
         modules: 7,
@@ -202,7 +323,7 @@ export const CONTENT = {
         name: "League 3",
         displayNumber: "3",
         level: "Intermediate",
-        color: "#3959ff",
+        color: COLORS.blue,
         tagline: "Enhance your Python skills and tackle more complex projects",
         description: "This chapter builds on basic Python knowledge, introducing more programming concepts such as functions, lists, and dictionaries. Students will engage in problem-solving using algorithms and flowcharts, and get a primer on object-oriented programming.",
         modules: 8,
@@ -222,7 +343,7 @@ export const CONTENT = {
         name: "League 2",
         displayNumber: "2",
         level: "Advanced",
-        color: "#cf75ff",
+        color: COLORS.purple,
         tagline: "Master advanced concepts and competitive programming",
         description: "This chapter explores more advanced Python topics in a less challenging manner, focusing on data structures, algorithms, and more complex projects. Students will also get an introduction to competitive programming concepts.",
         modules: 8,
@@ -242,7 +363,7 @@ export const CONTENT = {
         name: "League 1",
         displayNumber: "1",
         level: "Elite",
-        color: "#eb4869",
+        color: COLORS.red,
         tagline: "Learn advanced algorithms and data structures",
         description: "Students in League 1 can count themselves amongst the top 3% of programmers in the world. In this final chapter, students focus on preparing for programming Olympiads and may transition to different programming languages used in competitions. They will practice extensively with Olympiad-style problems and learn strategies for excelling in competitive environments.",
         special: "League 1 provides an ongoing learning journey, allowing for continuous growth and refinement in competitive programming skills without a defined end.",
@@ -265,8 +386,10 @@ export const CONTENT = {
 };
 
 export const EXTERNAL_LINKS = {
-  booking: process.env.NEXT_PUBLIC_BOOKING_URL || 'https://harbour-space.typeform.com/to/gxFFkidp?typeform-source=join.leaguesofcode.com',
+  booking: process.env.NEXT_PUBLIC_BOOKING_URL || DEFAULT_BOOKING_URL,
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || '',
   facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || '',
   email: process.env.NEXT_PUBLIC_EMAIL || 'hello@leaguesofcode.com',
-};
+} satisfies ExternalLinks;
+
+export type { Content, CurriculumLeague, CTA, Feature, ProcessStep, Review, Footer, ExternalLinks };

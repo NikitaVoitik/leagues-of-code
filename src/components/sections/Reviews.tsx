@@ -31,7 +31,7 @@ export default function Reviews() {
               className="bg-white border-2 border-black rounded-md shadow-[4px_4px_0px_0px_#000000] hover:shadow-[6px_6px_0px_0px_#000000] transition-all duration-200 ease-in-out p-6 break-inside-avoid mb-8 inline-block w-full"
             >
               {/* Quote Icon */}
-              <div className="text-6xl font-bold leading-none" style={{ color: COLORS.primaryDark }}>"</div>
+              <div className="text-6xl font-bold leading-none" style={{ color: COLORS.primaryDark }}>&ldquo;</div>
 
               {/* Review Text */}
               <p className="text-lg leading-relaxed mb-6" style={{ color: COLORS.grayText }}>

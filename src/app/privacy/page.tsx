@@ -1,10 +1,11 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Separator from '@/components/ui/Separator';
 import LegalPageLayout from '@/components/layouts/LegalPageLayout';
 import { CONTENT } from '@/lib/content';
 import { COLORS } from '@/lib/constants';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Privacy Policy - Leagues of Code",
   description: "Privacy policy for Leagues of Code services",
 };

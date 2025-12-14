@@ -1,6 +1,8 @@
+import type { CSSProperties } from "react";
+
 /**
  * Design System Constants
- * 
+ *
  * This file contains design tokens that are actively used in the application.
  * Colors that can't be used in Tailwind className props are defined here for use in inline styles.
  * Project must follow current colore schema and not create a new entyties
@@ -37,7 +39,9 @@ export const COLORS = {
   // Background Colors
   background: '#FAFAFA',       // Page background
   backgroundGrid: '#F4F4F4',   // Grid pattern color
-};
+} as const;
+
+export type Colors = typeof COLORS;
 
 // ============================================================================
 // GRID SIZES - Used in STYLES.gridBackground()
@@ -46,7 +50,9 @@ export const GRID_SIZES = {
   small: 40,
   medium: 60,
   large: 80,
-};
+} as const;
+
+export type GridSizes = typeof GRID_SIZES;
 
 // ============================================================================
 // STYLES - Reusable Style Functions
@@ -64,7 +70,11 @@ export const GRID_SIZES = {
  * <div style={STYLES.gridBackground(COLORS.background, COLORS.backgroundGrid, GRID_SIZES.medium)}>
  */
 export const STYLES = {
-  gridBackground: (bgColor, gridColor, size = GRID_SIZES.medium) => ({
+  gridBackground: (
+    bgColor: string,
+    gridColor: string,
+    size: number = GRID_SIZES.medium
+  ): CSSProperties => ({
     backgroundColor: bgColor,
     backgroundImage: `
       linear-gradient(to right, ${gridColor} 1px, transparent 1px),
