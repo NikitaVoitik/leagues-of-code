@@ -38,6 +38,7 @@ LoC/
 │   │   ├── page.js              # Homepage
 │   │   ├── layout.js            # Root layout (Inter font, GA)
 │   │   ├── globals.css          # Global styles
+│   │   ├── curriculum/          # Curriculum page
 │   │   ├── privacy/             # Privacy policy page
 │   │   └── terms/               # Terms of service page
 │   │
@@ -58,15 +59,16 @@ LoC/
 │   │
 │   └── lib/                     # Utilities & data
 │       ├── content.js           # All text content (Single Source of Truth)
-│       └── constants.js         # Design tokens & style functions
+│       └── constants.js         # Design system (colors, styles, grid)
 │
 ├── public/                      # Static assets
 │   ├── favicon.png
-│   ├── 1.png                    # Approach images
-│   └── 2.png
+│   ├── 1.png                    # Approach images (optimize: 871KB → 200KB)
+│   └── 2.png                    # Approach images (optimize: 319KB → 80KB)
 │
 ├── .env.example                 # Environment variables template
 ├── .env.local                   # Your actual env vars (gitignored)
+├── refactoring_next.md          # Refactoring log & next steps
 └── package.json
 ```
 
@@ -118,26 +120,43 @@ legal: {
 
 ## 🎨 Design System
 
-### Typography
-- **Font:** Inter (loaded from Google Fonts)
-- Usage: Automatically applied via `font-sans` class
+All design tokens centralized in `src/lib/constants.js` for consistency.
 
-### Colors (LoC Brand)
-Use directly in Tailwind classes:
-- Blue: `#3959ff` → `bg-[#3959ff]`
-- Sky Blue: `#38c9ff`
-- Yellow: `#f8cd46`
-- Red: `#eb4869`
-- Purple: `#cf75ff`
-- Green: `#23c175`
+### Colors
+**Always import from constants:**
+```javascript
+import { COLORS } from "@/lib/constants";
+
+// Use in inline styles (recommended for dynamic values)
+<div style={{ color: COLORS.grayText }}>
+<div style={{ backgroundColor: COLORS.primaryDark }}>
+
+// Or in Tailwind for static colors
+<div className="bg-white text-black">
+```
+
+**Available colors:**
+- `COLORS.primary` - Hero gradient start (#1E3CD9)
+- `COLORS.primaryDark` - Buttons, badges (#1836CF)
+- `COLORS.primaryHover` - Hover states (#2644E0)
+- `COLORS.blue`, `skyBlue`, `yellow`, `red`, `purple`, `green` - Brand palette
+- `COLORS.grayText` - Body text (#626262)
+- `COLORS.grayTextDark` - Legal pages (#444444)
+- `COLORS.background`, `backgroundGrid` - Page backgrounds
 
 ### Grid Background
-For sections with grid pattern:
-```jsx
+```javascript
 import { COLORS, STYLES, GRID_SIZES } from "@/lib/constants";
 
-<div style={STYLES.gridBackground(COLORS.primary, COLORS.primaryHover, GRID_SIZES.medium)}>
+<div style={STYLES.gridBackground(
+  COLORS.primaryDark,
+  COLORS.primaryHover,
+  GRID_SIZES.medium
+)}>
 ```
+
+### Typography
+- **Font:** Inter (auto-applied via `font-sans` class)
 
 ## 🛠️ Available Scripts
 
@@ -160,16 +179,23 @@ See `.env.example` for all available variables:
 
 ## 📊 Tech Stack
 
-- **Framework:** Next.js 15.5.2 (App Router)
+- **Framework:** Next.js 15.5.2 (App Router, SSR optimized)
 - **React:** 19.1.0
-- **Styling:** Tailwind CSS 4
+- **Styling:** Tailwind CSS 4 + Centralized design system
 - **Icons:** Lucide React
 - **Font:** Inter (Google Fonts)
 - **Code Quality:** ESLint + Prettier
 
+## 🚀 Performance
 
-## Deploy on Vercel
+- **Bundle Size:** ~107 kB (homepage)
+- **Rendering:** Static generation (all pages)
+- **Server Components:** Hero, Footer (optimized SSR)
+- **Client Components:** Only where needed (curriculum page)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Maintenance
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `refactoring_next.md` for:
+- Recent improvements
+- Scheduled optimizations
+- Code quality metrics
