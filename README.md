@@ -61,6 +61,14 @@ LoC/
 │       ├── content.ts           # All text content (Single Source of Truth, typed)
 │       └── constants.ts         # Design system (colors, styles, grid, typed)
 │
+├── src/app/curriculum/styles/   # Modular CSS for curriculum page
+│   ├── variables.css            # Tokens (colors, spacing, typography)
+│   ├── base.css                 # Base/layout/typography/utilities
+│   ├── hero.css                 # Hero section
+│   ├── timeline.css             # Timeline nodes
+│   ├── stack.css                # Stacked cards
+│   └── placement-details.css    # Placement and league detail sections
+│
 ├── public/                      # Static assets
 │   ├── favicon.png
 │   ├── 1.png                    # Approach image (full quality)

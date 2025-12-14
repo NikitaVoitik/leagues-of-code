@@ -1,0 +1,65 @@
+/**
+ * CSS VARIABLES - Design Tokens
+ */
+:root {
+  /* Colors - LoC Brand */
+  --color-primary: #3959ff;
+  --color-primary-dark: #1836CF;
+  --color-primary-hover: #2644E0;
+  --color-sky-blue: #38c9ff;
+  --color-yellow: #f8cd46;
+  --color-red: #eb4869;
+  --color-purple: #cf75ff;
+  --color-green: #23c175;
+  
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-dark: #232339;
+  --color-gray: #595a6c;
+  --color-gray-light: #626262;
+  --color-bg: #FAFAFA;
+  --color-bg-grid: #F4F4F4;
+  
+  /* Typography */
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-lg: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+  --font-size-xl: clamp(1.25rem, 1.125rem + 0.5vw, 1.5rem);
+  --font-size-2xl: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --font-size-3xl: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --font-size-4xl: clamp(2.5rem, 2rem + 2vw, 4rem);
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  
+  /* Layout */
+  --container-max: 90svw;
+  --container-content: 60svw;
+  --border-radius: 0.375rem;
+  --border-width: 2px;
+  
+  /* Shadows - Neo-brutalism */
+  --shadow-sm: 2px 2px 0px 0px var(--color-black);
+  --shadow-md: 4px 4px 0px 0px var(--color-black);
+  --shadow-lg: 6px 6px 0px 0px var(--color-black);
+  
+  /* Grid Pattern */
+  --grid-size: 60px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0f1b2b;
+    --color-bg-grid: #1a2942;
+    --color-white: #0f1b2b;
+    --color-black: #ffffff;
+  }
+}

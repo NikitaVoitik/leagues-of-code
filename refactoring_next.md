@@ -124,6 +124,23 @@ export const COLORS = {
 - Migrated section and layout components to `.tsx` (Hero, Approach, Process, Reviews, Footer, LegalPageLayout).
 - Migrated Next app pages to `.tsx` (layout, home, privacy, terms, curriculum) with typed metadata where applicable.
 - Typed core libraries: `src/lib/constants.ts` (typed colors/grid utilities) and `src/lib/content.ts` (content model + exported types).
+
+### Phase 5: Curriculum Interactions Cleanup
+
+- Replaced manual DOM listeners with React state handlers for timeline hover and stacked cards in `src/app/curriculum/page.tsx`.
+- Hero animation now CSS-driven (no JS tweaks); CTA focus uses existing CSS focus styles.
+- Added helper `cssVars` for typed CSS variables, removed direct `querySelector` usage.
+
+### Phase 6: Curriculum Page Static Interactions
+
+- Removed client-side state and hooks from `src/app/curriculum/page.tsx`; page is now a server component.
+- Timeline hover/focus interactions now use pure CSS (`:has`, `:hover`, `:focus-visible`) to drive stacked card opacity/z-index.
+- Hero entrance animation handled via CSS keyframes; no JS timers.
+
+### Phase 7: Curriculum CSS Modularization
+
+- Split `curriculum.css` into scoped partials under `src/app/curriculum/styles/` (variables, base, hero, timeline, stack, placement-details) with an `index.css` aggregator.
+- Updated page import to the new styles index; functionality unchanged, organization improved.
 - Updated lint/format scripts to include `.ts/.tsx`.
 
 ---
@@ -139,6 +156,7 @@ export const COLORS = {
 - Color centralization: 93% complete
 - Client components optimized: 2/3 converted to server components
 - TypeScript migration: tooling + core libs + all sections/layout/pages converted
+- Curriculum page: now static (server) with CSS-driven interactions, no client JS
 
 **Build Status:**
 ```bash
@@ -154,8 +172,8 @@ export const COLORS = {
 
 ### Priority 1: Curriculum Page React-ification (1-2 hours)
 
-- Replace manual DOM/querySelector interactions in `src/app/curriculum/page.tsx` with React state/handlers or CSS hover, so we can drop imperative listeners and maybe remove `'use client'`.
-- Ensure animations/focus states remain intact; keep CSS variables approach.
+- ✅ Replace manual DOM/querySelector interactions in `src/app/curriculum/page.tsx` with React state/handlers or CSS hover. (Done)
+- Next: consider if we can further reduce client JS (e.g., rely solely on CSS hover/focus, or minimal state) to drop `'use client'` while preserving interactions.
 
 ### Priority 2: Curriculum CSS Modularization (Optional, 1-2 hours)
 

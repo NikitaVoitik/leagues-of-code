@@ -1,108 +1,15 @@
-'use client';
-
-import { useEffect, useState, type CSSProperties } from 'react';
+import type { CSSProperties } from "react";
 import Footer from "@/components/sections/Footer";
 import Separator from "@/components/ui/Separator";
 import { CONTENT } from "@/lib/content";
-import './curriculum.css';
-
-const cssVars = (vars: Record<string, string | number>): CSSProperties => vars as CSSProperties;
+import './styles/index.css';
 
 export default function CurriculumPage() {
   const { curriculum } = CONTENT;
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
-
-  useEffect(() => {
-    // Initialize curriculum page interactions
-    const CurriculumPage = {
-      init() {
-        console.log('🚀 Curriculum page initialized');
-        this.setupHeroAnimations();
-        this.setupEventListeners();
-        this.setupAccessibility();
-      },
-
-      setupHeroAnimations() {
-        const hero = document.querySelector<HTMLElement>('.curriculum-hero');
-        if (!hero) return;
-
-        hero.style.opacity = '0';
-        hero.style.transform = 'translateY(20px)';
-        hero.style.transition = 'opacity 600ms ease-out, transform 600ms ease-out';
-        
-        setTimeout(() => {
-          hero.style.opacity = '1';
-          hero.style.transform = 'translateY(0)';
-        }, 100);
-      },
-
-      setupEventListeners() {
-        this.setupTimelineNodes();
-      },
-
-      setupTimelineNodes() {
-        const nodes = document.querySelectorAll<HTMLElement>('.timeline-node');
-        const cards = document.querySelectorAll<HTMLElement>('.stack-card');
-        
-        nodes.forEach(node => {
-          // Show card on hover
-          node.addEventListener('mouseenter', () => {
-            const leagueId = node.dataset.leagueId;
-            nodes.forEach(n => n.classList.remove('active'));
-            node.classList.add('active');
-            this.showCard(leagueId, cards);
-          });
-
-          // Reset on mouse leave
-          node.addEventListener('mouseleave', () => {
-            nodes.forEach(n => n.classList.remove('active'));
-            this.resetCards(cards);
-          });
-        });
-      },
-
-      showCard(leagueId: string | undefined, cards: NodeListOf<HTMLElement>) {
-        cards.forEach((card) => {
-          if (card.dataset.leagueId === leagueId) {
-            card.style.zIndex = '100';
-            card.style.opacity = '1';
-          } else {
-            card.style.zIndex = '';
-            card.style.opacity = '0.5';
-          }
-        });
-      },
-
-      resetCards(cards: NodeListOf<HTMLElement>) {
-        cards.forEach(card => {
-          card.style.zIndex = '';
-          card.style.opacity = '1';
-        });
-      },
-
-      setupAccessibility() {
-        const ctaButton = document.querySelector<HTMLAnchorElement>('.curriculum-hero__cta');
-        if (ctaButton) {
-          ctaButton.addEventListener('focus', (e) => {
-            const target = e.target as HTMLElement;
-            target.style.outline = '3px solid var(--color-yellow)';
-            target.style.outlineOffset = '2px';
-          });
-          ctaButton.addEventListener('blur', (e) => {
-            const target = e.target as HTMLElement;
-            target.style.outline = '';
-          });
-        }
-      }
-    };
-
-    CurriculumPage.init();
-    setIsLoaded(true);
-  }, []);
 
   return (
     <>
-      <div className={`curriculum-page ${isLoaded ? 'loaded' : 'loading'}`}>
+      <div className="curriculum-page loaded">
         {/* ============================================
             HERO SECTION - Phase 2
             ============================================ */}
@@ -145,7 +52,8 @@ export default function CurriculumPage() {
                       key={league.id}
                       className="timeline-node"
                       data-league-id={league.id}
-                      style={cssVars({ '--league-color': league.color, '--index': index })}
+                      style={{ '--league-color': league.color, '--index': index } as CSSProperties}
+                      tabIndex={0}
                     >
                       <div className="timeline-node__circle">{league.displayNumber}</div>
                       <div className="timeline-node__label">{league.name}</div>
@@ -163,11 +71,11 @@ export default function CurriculumPage() {
                       className="stack-card"
                       data-league-id={league.id}
                       data-index={index}
-                      style={cssVars({ 
+                      style={{ 
                         '--league-color': league.color,
                         '--index': index,
                         '--total': curriculum.leagues.length
-                      })}
+                      } as CSSProperties}
                     >
                       <div className="stack-card__number">{league.displayNumber}</div>
                       <div className="stack-card__content">
@@ -209,7 +117,7 @@ export default function CurriculumPage() {
                 id={`detail-${league.id}`}
                 className="league-detail"
                 data-league-id={league.id}
-                style={cssVars({ '--league-color': league.color })}
+                style={{ '--league-color': league.color } as CSSProperties}
               >
                 <div className="league-detail__container">
                   {/* LEFT SIDE - Sticky Description */}
