@@ -7,15 +7,15 @@ export default function Hero() {
   
   return (
     <div
-      className="w-full h-[80svh] flex flex-col items-center justify-center gap-10"
+      className="w-full min-h-[80svh] flex flex-col items-center justify-center gap-12 px-6 py-16"
       style={STYLES.gridBackground(COLORS.primary, COLORS.primaryHover, GRID_SIZES.medium)}
     >
-      <div className="w-1/2 gap-10 flex flex-col items-center font-sans">
-        <h1 className="text-6xl font-bold text-white text-center">
+      <div className="w-full max-w-5xl gap-10 flex flex-col items-center font-sans">
+        <h1 className="text-6xl md:text-7xl font-bold text-white text-center leading-tight">
           {hero.title.line1} <br/>
           {hero.title.line2}
         </h1>
-        <p className="text-xl text-white text-center">
+        <p className="text-xl md:text-2xl text-white text-center max-w-4xl leading-relaxed">
           {hero.description}
         </p>
       </div>

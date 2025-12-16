@@ -6,20 +6,20 @@ export default function Process() {
   const { process } = CONTENT;
 
   return (
-    <div className="w-full flex flex-col items-center justify-center gap-10 p-10 pt-0">
+    <div className="w-full flex flex-col items-center justify-center gap-12 px-6 py-16">
       {/* Header Section */}
-      <div className="gap-10 flex flex-col items-center font-sans">
+      <div className="gap-10 flex flex-col items-center font-sans max-w-4xl text-center">
         <h1 className="text-5xl font-bold text-black text-center">
           {process.title.line1}<br/>
           {process.title.line2}
         </h1>
-        <p className="text-xl text-center w-[60svw]" style={{ color: COLORS.grayText }}>
+        <p className="text-xl text-center" style={{ color: COLORS.grayText }}>
           {process.description}
         </p>
       </div>
 
       {/* Steps Section */}
-      <div className="w-[60svw] flex flex-col gap-8">
+      <div className="w-full max-w-5xl flex flex-col gap-10">
         {process.steps.map((step, index) => (
           <div 
             key={index} 

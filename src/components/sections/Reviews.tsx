@@ -6,19 +6,19 @@ export default function Reviews() {
   const { reviews } = CONTENT;
 
   return (
-    <div className="w-full flex flex-col items-center justify-center gap-10 p-10 pt-0">
+    <div className="w-full flex flex-col items-center justify-center gap-12 px-6 py-16">
       {/* Header Section */}
-      <div className="gap-10 flex flex-col items-center font-sans">
+      <div className="gap-10 flex flex-col items-center font-sans max-w-4xl text-center">
         <h1 className="text-5xl font-bold text-black text-center">
           {reviews.title}
         </h1>
-        <p className="text-xl text-center w-[60svw]" style={{ color: COLORS.grayText }}>
+        <p className="text-xl text-center" style={{ color: COLORS.grayText }}>
           {reviews.description}
         </p>
       </div>
 
       {/* Reviews Masonry Grid */}
-      <div className="w-[60svw]">
+      <div className="w-full max-w-5xl">
         <div
           className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8"
           style={{
