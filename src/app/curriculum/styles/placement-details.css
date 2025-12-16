@@ -1,0 +1,202 @@
+/**
+ * PLACEMENT & LEAGUE DETAILS
+ */
+.placement-section {
+  max-inline-size: var(--max-width);
+  margin-inline: auto;
+  margin-block: var(--space-3xl);
+  padding-inline: var(--space-lg);
+}
+
+.placement-box {
+  padding: var(--space-xl);
+  border-inline-start: 4px solid var(--color-primary);
+}
+
+.placement-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin-block-end: var(--space-md);
+  color: var(--color-black);
+}
+
+.placement-description {
+  font-size: var(--font-size-lg);
+  line-height: 1.8;
+  color: var(--color-gray-light);
+}
+
+.league-detail {
+  max-inline-size: var(--max-width);
+  margin-inline: auto;
+  margin-block: clamp(4rem, 8vw, 8rem);
+  padding-inline: var(--space-lg);
+}
+
+.league-detail__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: flex-start;
+  min-block-size: 100vh;
+}
+
+.league-detail__left {
+  position: sticky;
+  inset-block-start: 2rem;
+  block-size: fit-content;
+  padding-block-end: var(--space-2xl);
+}
+
+.league-detail__number {
+  font-size: clamp(8rem, 15vw, 12rem);
+  font-weight: 900;
+  color: var(--league-color);
+  line-height: 0.85;
+  opacity: 0.15;
+  margin-block-end: var(--space-md);
+  letter-spacing: -0.05em;
+}
+
+.league-detail__name {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--color-black);
+  margin-block-end: var(--space-sm);
+}
+
+.league-detail__level {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--league-color);
+  letter-spacing: 0.1em;
+  margin-block-end: var(--space-lg);
+  padding-block: var(--space-xs);
+  padding-inline: var(--space-sm);
+  border: 1px solid var(--league-color);
+  border-radius: 2px;
+}
+
+.league-detail__tagline {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-black);
+  margin-block-end: var(--space-lg);
+  line-height: 1.4;
+}
+
+.league-detail__description {
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  color: var(--color-gray-light);
+  margin-block-end: var(--space-lg);
+}
+
+.league-detail__practice-note,
+.league-detail__special {
+  font-size: var(--font-size-sm);
+  line-height: 1.7;
+  color: var(--color-gray-light);
+  padding-inline-start: var(--space-md);
+  border-inline-start: 2px solid var(--league-color);
+  margin-block-start: var(--space-lg);
+  font-style: italic;
+}
+
+.league-detail__special {
+  color: var(--league-color);
+  font-weight: 600;
+  font-style: normal;
+}
+
+.league-detail__right {
+  padding-block-start: var(--space-xl);
+}
+
+.league-detail__topics-title {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-gray-light);
+  letter-spacing: 0.1em;
+  margin-block-end: var(--space-xl);
+}
+
+.league-detail__topics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.league-detail__topic {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: var(--space-lg);
+  padding-block: var(--space-xl);
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.league-detail__topic:hover {
+  padding-inline-start: var(--space-sm);
+}
+
+.league-detail__topic-number {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--league-color);
+  opacity: 0.6;
+}
+
+.league-detail__topic-text {
+  font-size: var(--font-size-lg);
+  color: var(--color-black);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.league-detail__topic:nth-child(1) { animation-delay: 0.05s; }
+.league-detail__topic:nth-child(2) { animation-delay: 0.1s; }
+.league-detail__topic:nth-child(3) { animation-delay: 0.15s; }
+.league-detail__topic:nth-child(4) { animation-delay: 0.2s; }
+.league-detail__topic:nth-child(5) { animation-delay: 0.25s; }
+.league-detail__topic:nth-child(6) { animation-delay: 0.3s; }
+.league-detail__topic:nth-child(7) { animation-delay: 0.35s; }
+.league-detail__topic:nth-child(8) { animation-delay: 0.4s; }
+.league-detail__topic:nth-child(9) { animation-delay: 0.45s; }
+.league-detail__topic:nth-child(10) { animation-delay: 0.5s; }
+
+@media (max-width: 968px) {
+  .league-detail__container {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    min-block-size: auto;
+  }
+  
+  .league-detail__left {
+    position: static;
+    padding-block-end: 0;
+  }
+  
+  .league-detail__number {
+    font-size: 6rem;
+  }
+  
+  .league-detail__right {
+    padding-block-start: 0;
+  }
+}

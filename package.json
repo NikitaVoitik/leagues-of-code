@@ -1,12 +1,15 @@
 {
-  "name": "untitled2",
-  "version": "0.1.0",
+  "name": "leagues-of-code",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
+    "preview": "next build && next start"
   },
   "dependencies": {
     "lucide-react": "^0.542.0",
@@ -17,8 +20,12 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/node": "^25.0.2",
+    "@types/react": "^19.2.7",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
-    "tailwindcss": "^4"
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4",
+    "typescript": "^5.9.3"
   }
 }

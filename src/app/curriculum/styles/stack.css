@@ -1,0 +1,171 @@
+/**
+ * STACKED CARDS
+ */
+.stack-section {
+  max-inline-size: var(--max-width);
+  margin-inline: auto;
+  margin-block: clamp(4rem, 8vw, 6rem);
+  padding-inline: var(--space-lg);
+}
+
+.stack-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+
+.stack-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-black);
+}
+
+.stack-deck {
+  position: relative;
+  inline-size: min(450px, 90vw);
+  block-size: 450px;
+  perspective: 1200px;
+  margin-inline: auto;
+}
+
+.stack-card {
+  position: absolute;
+  inset-inline-start: 50%;
+  inset-block-start: 50%;
+  inline-size: 100%;
+  block-size: 280px;
+  background-color: var(--color-white);
+  border: 2px solid var(--league-color);
+  border-radius: 12px;
+  padding: var(--space-xl);
+  transition: opacity 0.3s ease, z-index 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+  
+  transform: 
+    translate(-50%, -50%)
+    translateY(calc(var(--index) * 20px))
+    scale(calc(1 - var(--index) * 0.03));
+  
+  z-index: calc(var(--total) - var(--index));
+  
+  opacity: 0;
+  animation: stackFadeIn 0.5s ease-out forwards;
+  animation-delay: calc(var(--index) * 0.08s);
+}
+
+@keyframes stackFadeIn {
+  from {
+    opacity: 0;
+    transform: 
+      translate(-50%, -50%)
+      translateY(calc(var(--index) * 20px + 40px))
+      scale(calc(1 - var(--index) * 0.03));
+  }
+  to {
+    opacity: 1;
+    transform: 
+      translate(-50%, -50%)
+      translateY(calc(var(--index) * 20px))
+      scale(calc(1 - var(--index) * 0.03));
+  }
+}
+
+.stack-card__number {
+  position: absolute;
+  inset-block-start: var(--space-lg);
+  inset-inline-end: var(--space-lg);
+  font-size: 6rem;
+  font-weight: 900;
+  color: var(--league-color);
+  opacity: 0.1;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.stack-card__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.stack-card__name {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.stack-card__level {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--league-color);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.stack-card__stats {
+  display: flex;
+  gap: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--color-gray-light);
+  margin-block-start: auto;
+}
+
+.stack-card__corner {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inline-size: 0;
+  block-size: 0;
+  border-style: solid;
+  border-width: 0 0 40px 40px;
+  border-color: transparent transparent var(--league-color) transparent;
+  border-bottom-left-radius: 12px;
+  opacity: 0.3;
+}
+
+.merged-container:has(.timeline-node:hover) .stack-card,
+.merged-container:has(.timeline-node:focus-visible) .stack-card {
+  opacity: 0.5;
+}
+
+.merged-container:has(.timeline-node:hover[data-league-id="league-5"]) .stack-card[data-league-id="league-5"],
+.merged-container:has(.timeline-node:focus-visible[data-league-id="league-5"]) .stack-card[data-league-id="league-5"],
+.merged-container:has(.timeline-node:hover[data-league-id="league-4"]) .stack-card[data-league-id="league-4"],
+.merged-container:has(.timeline-node:focus-visible[data-league-id="league-4"]) .stack-card[data-league-id="league-4"],
+.merged-container:has(.timeline-node:hover[data-league-id="league-3"]) .stack-card[data-league-id="league-3"],
+.merged-container:has(.timeline-node:focus-visible[data-league-id="league-3"]) .stack-card[data-league-id="league-3"],
+.merged-container:has(.timeline-node:hover[data-league-id="league-2"]) .stack-card[data-league-id="league-2"],
+.merged-container:has(.timeline-node:focus-visible[data-league-id="league-2"]) .stack-card[data-league-id="league-2"],
+.merged-container:has(.timeline-node:hover[data-league-id="league-1"]) .stack-card[data-league-id="league-1"],
+.merged-container:has(.timeline-node:focus-visible[data-league-id="league-1"]) .stack-card[data-league-id="league-1"] {
+  opacity: 1;
+  z-index: 100;
+}
+
+@media (max-width: 768px) {
+  .stack-deck {
+    block-size: 400px;
+  }
+  
+  .stack-card {
+    block-size: 220px;
+    padding: var(--space-md);
+    transform: 
+      translate(-50%, -50%)
+      translateY(calc(var(--index) * 30px))
+      scale(calc(1 - var(--index) * 0.04));
+  }
+  
+  .stack-card__number {
+    font-size: 4rem;
+  }
+  
+  .stack-card__name {
+    font-size: var(--font-size-lg);
+  }
+}
